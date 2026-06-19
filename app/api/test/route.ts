@@ -11,7 +11,7 @@ export async function GET() {
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   try {
-    const { data, error } = await supabase.from('emirates').select('*').limit(5);
+    const { data, error } = await supabase.from('categories').select('*');
     if (error) throw error;
     return Response.json({ success: true, data });
   } catch (err) {
